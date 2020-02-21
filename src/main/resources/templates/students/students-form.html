@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" rel="stylesheet">
+
+    <title>Save Student</title>
+</head>
+
+<body>
+
+<div class="container">
+    <h3>Student Directory</h3>
+    <hr>
+    <p class="h4 mb-4">Save Student</p>
+    <form action="#" method="POST"
+          th:action="@{/students/save}" th:object="${student}">
+
+
+        <input th:field="*{id}" type="hidden"/>
+
+        <input class="form-control mb-4 col-4" placeholder="First name"
+               th:field="*{firstName}" type="text">
+
+        <input class="form-control mb-4 col-4" placeholder="Last name"
+               th:field="*{lastName}" type="text">
+
+        <input class="form-control mb-4 col-4" placeholder="Roll number"
+               th:field="*{rollNumber}" type="text">
+
+        <button class="btn btn-info col-2" type="submit">Save</button>
+    </form>
+    <hr>
+    <a th:href="@{/students/list}">Back to Students List</a>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

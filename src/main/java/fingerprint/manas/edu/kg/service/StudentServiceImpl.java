@@ -1,51 +1,48 @@
 package fingerprint.manas.edu.kg.service;
 
-import fingerprint.manas.edu.kg.dao.StudentDAO;
 import fingerprint.manas.edu.kg.entity.Student;
+import fingerprint.manas.edu.kg.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
 
-    private StudentDAO studentDAO;
+    private StudentRepository studentRepository;
 
-    StudentServiceImpl(StudentDAO theStudentDAO) {
-        this.studentDAO = theStudentDAO;
-    }
-
-
-    @Override
-    @Transactional
-    public List<Student> getStudents() {
-        return studentDAO.findAll();
+    StudentServiceImpl(StudentRepository theStudentRepository) {
+        this.studentRepository = theStudentRepository;
     }
 
     @Override
-    @Transactional
-    public void saveStudent(Student student) {
-        studentDAO.save(student);
-    }
-
-    @Transactional
-    public Optional<Student> getStudent(String rollNumber) {
-        return studentDAO.findById(rollNumber);
+    public List<Student> findAll() {
+        return studentRepository.findAllByOrderByLastNameAsc();
     }
 
     @Override
-    @Transactional
-    public Student updateStudent(Student student) {
-        return studentDAO.save(student);
+    public Student findById(int theId) {
+        Optional<Student> result = studentRepository.findById(theId);
+
+        Student theEmployee = null;
+
+        if (result.isPresent()) {
+            theEmployee = result.get();
+        } else {
+            throw new RuntimeException("Did not find employee id - " + theId);
+        }
+
+        return theEmployee;
     }
 
     @Override
-    @Transactional
-    public String deleteStudent(Student student) {
-        String id = student.getRollNumber();
-        studentDAO.delete(student);
-        return id + " successfully deleted";
+    public void save(Student theEmployee) {
+        studentRepository.save(theEmployee);
+    }
+
+    @Override
+    public void deleteById(int theId) {
+        studentRepository.deleteById(theId);
     }
 }

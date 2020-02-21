@@ -10,6 +10,10 @@ import javax.persistence.*;
 public class Student {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+
     @Column(name="roll_number")
     private String rollNumber;
 

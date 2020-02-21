@@ -3,18 +3,15 @@ package fingerprint.manas.edu.kg.service;
 import fingerprint.manas.edu.kg.entity.Student;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface StudentService {
 
-    List<Student> getStudents();
+    List<Student> findAll();
 
-    void saveStudent(Student student);
+    Student findById(int theId);
 
-    Optional<Student> getStudent(String rollNumber);
+    void save(Student theEmployee);
 
-    Student updateStudent(Student Student);
-
-    String deleteStudent(Student student);
+    void deleteById(int theId);
 
 }
