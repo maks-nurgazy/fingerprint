@@ -34,6 +34,20 @@
         <input class="form-control mb-4 col-4" placeholder="Roll number"
                th:field="*{rollNumber}" type="text">
 
+
+        <input class="form-control mb-4 col-4" placeholder="Email"
+               th:field="*{studentDetail.email}" type="text">
+
+
+        <input class="form-control mb-4 col-4" placeholder="Grade"
+               th:field="*{studentDetail.grade}" type="text">
+
+        <input class="form-control mb-4 col-4" placeholder="Faculty"
+               th:field="*{university.faculty}" type="text">
+
+        <input class="form-control mb-4 col-4" placeholder="Department"
+               th:field="*{university.department}" type="text">
+
         <button class="btn btn-info col-2" type="submit">Save</button>
     </form>
     <hr>

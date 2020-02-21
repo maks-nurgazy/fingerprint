@@ -1,7 +1,9 @@
 package fingerprint.manas.edu.kg.service;
 
 import fingerprint.manas.edu.kg.entity.Student;
+import fingerprint.manas.edu.kg.entity.University;
 import fingerprint.manas.edu.kg.repository.StudentRepository;
+import fingerprint.manas.edu.kg.repository.UniversityRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,9 +13,11 @@ import java.util.Optional;
 public class StudentServiceImpl implements StudentService {
 
     private StudentRepository studentRepository;
+    private final UniversityRepository universityRepository;
 
-    StudentServiceImpl(StudentRepository theStudentRepository) {
+    StudentServiceImpl(StudentRepository theStudentRepository, UniversityRepository universityRepository) {
         this.studentRepository = theStudentRepository;
+        this.universityRepository = universityRepository;
     }
 
     @Override
@@ -37,8 +41,14 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void save(Student theEmployee) {
-        studentRepository.save(theEmployee);
+    public void save(Student theStudent) {
+        University university = theStudent.getUniversity();
+        University exists = universityRepository.findUniversityByFacultyAndDepartment(
+                university.getFaculty(),university.getDepartment());
+        if(exists!=null){
+            theStudent.setUniversity(exists);
+        }
+        studentRepository.save(theStudent);
     }
 
     @Override

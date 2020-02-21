@@ -23,7 +23,7 @@ public class StudentDetail {
     private String photo;
 
     @Column(name = "grade")
-    private int grade;
+    private Integer grade = null;
 
     @Column(name = "email")
     private String email;
