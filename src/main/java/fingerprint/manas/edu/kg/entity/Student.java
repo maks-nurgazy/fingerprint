@@ -19,8 +19,6 @@ public class Student {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "grade")
-    private int grade;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_detail_id")

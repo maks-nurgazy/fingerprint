@@ -23,6 +23,7 @@ public class StudentController {
         StudentDetail studentDetail = new StudentDetail();
         studentDetail.setFingerprint("finger2");
         studentDetail.setEmail("beka@luv2code.com");
+        studentDetail.setGrade(3);
 
 
         University university = new University();
@@ -32,11 +33,10 @@ public class StudentController {
         student.setRollNumber("1704.01021");
         student.setFirstName("beka");
         student.setLastName("baltabaev");
-        student.setGrade(3);
         student.setStudentDetail(studentDetail);
         student.setUniversity(university);
 
-        studentService.save(student);
+        studentService.saveStudent(student);
 
         model.addAttribute("theDate",new Date());
         return "saved";

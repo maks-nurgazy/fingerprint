@@ -1,6 +1,5 @@
 package fingerprint.manas.edu.kg.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,6 +18,12 @@ public class StudentDetail {
 
     @Column(name = "fingerprint")
     private String fingerprint;
+
+    @Column(name = "photo")
+    private String photo;
+
+    @Column(name = "grade")
+    private int grade;
 
     @Column(name = "email")
     private String email;

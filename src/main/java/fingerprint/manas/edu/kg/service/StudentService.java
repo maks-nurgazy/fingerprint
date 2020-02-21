@@ -1,24 +1,20 @@
 package fingerprint.manas.edu.kg.service;
 
-import fingerprint.manas.edu.kg.dao.StudentDAO;
 import fingerprint.manas.edu.kg.entity.Student;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import java.util.List;
+import java.util.Optional;
 
-@Service
-public class StudentService {
+public interface StudentService {
 
-    private StudentDAO studentDAO;
+    List<Student> getStudents();
 
-    StudentService(StudentDAO theStudentDAO){
-        this.studentDAO = theStudentDAO;
-    }
+    void saveStudent(Student student);
 
-    @Transactional
-    public void save(Student student){
-        studentDAO.save(student);
-    }
+    Optional<Student> getStudent(String rollNumber);
+
+    Student updateStudent(Student Student);
+
+    String deleteStudent(Student student);
 
 }
