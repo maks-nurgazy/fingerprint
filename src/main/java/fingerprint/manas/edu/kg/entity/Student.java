@@ -28,7 +28,8 @@ public class Student {
     @JoinColumn(name = "student_detail_id")
     private StudentDetail studentDetail;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "university_id")
     private University university;
 

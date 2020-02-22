@@ -21,7 +21,9 @@ public class University {
     @Column(name = "department")
     private String department;
 
-    @OneToMany(mappedBy = "university")
+    @OneToMany(mappedBy = "university",
+            cascade={CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH})
     private List<Student>students;
 
 }
