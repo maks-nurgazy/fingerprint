@@ -28,7 +28,7 @@ public class StudentDetail {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(mappedBy = "studentDetail",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "studentDetail",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Student student;
 
 }
