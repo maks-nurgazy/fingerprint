@@ -19,37 +19,37 @@
     <h3>Student Directory</h3>
     <hr>
     <p class="h4 mb-4">Save Student</p>
-    <form action="#" method="POST"
-          th:action="@{/students/save}" th:object="${student}">
+    <form action="/students/save" method="POST"
+          th:action="@{/students/save}" th:object="${student}" enctype="multipart/form-data">
 
-
-        <input th:field="*{id}" type="hidden"/>
-
-        <input class="form-control mb-4 col-4" placeholder="First name"
+        <input class="form-control mb-4 col-4" placeholder="First name" name="firstName"
                th:field="*{firstName}" type="text">
 
-        <input class="form-control mb-4 col-4" placeholder="Last name"
+        <input class="form-control mb-4 col-4" placeholder="Last name" name="lastName"
                th:field="*{lastName}" type="text">
 
-        <input class="form-control mb-4 col-4" placeholder="Roll number"
+        <input class="form-control mb-4 col-4" placeholder="Roll number" name="rollNumber"
                th:field="*{rollNumber}" type="text">
 
 
-        <input class="form-control mb-4 col-4" placeholder="Email"
+        <input class="form-control mb-4 col-4" placeholder="Email" name="email"
                th:field="*{studentDetail.email}" type="text">
 
 
-        <input class="form-control mb-4 col-4" placeholder="Grade"
+        <input class="form-control mb-4 col-4" placeholder="Grade" name="grade"
                th:field="*{studentDetail.grade}" type="text">
 
-        <input class="form-control mb-4 col-4" placeholder="Faculty"
+        <input class="form-control mb-4 col-4" placeholder="Faculty" name="faculty"
                th:field="*{university.faculty}" type="text">
 
-        <input class="form-control mb-4 col-4" placeholder="Department"
+        <input class="form-control mb-4 col-4" placeholder="Department" name="department"
                th:field="*{university.department}" type="text">
+
+        <input class="form-control mb-4 col-4" placeholder="Department" type="file" name="image">
 
         <button class="btn btn-info col-2" type="submit">Save</button>
     </form>
+
     <hr>
     <a th:href="@{/students/list}">Back to Students List</a>
 </div>

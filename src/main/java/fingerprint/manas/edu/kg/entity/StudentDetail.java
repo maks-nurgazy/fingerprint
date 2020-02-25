@@ -17,7 +17,7 @@ public class StudentDetail {
     private int id;
 
     @Column(name = "fingerprint")
-    private String fingerprint;
+    private byte[] fingerprint;
 
     @Column(name = "photo")
     private String photo;

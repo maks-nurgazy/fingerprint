@@ -1,10 +1,13 @@
 package fingerprint.manas.edu.kg.controller;
 
 import fingerprint.manas.edu.kg.entity.Student;
+import fingerprint.manas.edu.kg.entity.StudentDetail;
+import fingerprint.manas.edu.kg.entity.University;
 import fingerprint.manas.edu.kg.service.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -43,7 +46,7 @@ public class StudentController {
     }
 
     @GetMapping("/showFormForUpdate")
-    public String showFormForUpdate(@RequestParam("studentId") int theId,
+    public String showFormForUpdate(@RequestParam("studentId") String theId,
                                     Model theModel) {
 
         // get the employee from the service
@@ -57,11 +60,44 @@ public class StudentController {
     }
 
 
-    @PostMapping("/save")
-    public String saveEmployee(@ModelAttribute("student") Student theStudent) {
+    @RequestMapping("/saves")
+    public String saveEmployees(@RequestParam("firstName")String firstName,
+                               @RequestParam("lastName")String lastName,
+                               @RequestParam("rollNumber")String rollNumber,
+                               @RequestParam("email")String email,
+                               @RequestParam("grade")String grade,
+                               @RequestParam("faculty")String faculty,
+                               @RequestParam("department")String department,
+                               @RequestParam("image")MultipartFile image) {
 
-        // save the employee
-        studentService.save(theStudent);
+
+        Student theStudent = new Student();
+        theStudent.setFirstName(firstName);
+        theStudent.setLastName(lastName);
+        theStudent.setRollNumber(rollNumber);
+        StudentDetail studentDetail = new StudentDetail();
+        studentDetail.setEmail(email);
+        studentDetail.setGrade(Integer.valueOf(grade));
+        theStudent.setStudentDetail(studentDetail);
+        University university = new University();
+        university.setFaculty(faculty);
+        university.setDepartment(department);
+        theStudent.setUniversity(university);
+
+
+        studentService.save(theStudent,image);
+
+        // use a redirect to prevent duplicate submissions
+        return "redirect:/students/list";
+    }
+
+
+    @PostMapping("/save")
+    public String saveEmployee(@ModelAttribute("student") Student theStudent,
+                               @RequestParam("image")MultipartFile image) {
+
+
+        studentService.save(theStudent,image);
 
         // use a redirect to prevent duplicate submissions
         return "redirect:/students/list";
@@ -69,7 +105,7 @@ public class StudentController {
 
 
     @GetMapping("/delete")
-    public String delete(@RequestParam("studentId") int theId) {
+    public String delete(@RequestParam("studentId") String theId) {
 
         // delete the employee
         studentService.deleteById(theId);
