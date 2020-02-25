@@ -36,7 +36,6 @@ public class AttendanceController {
     public String attendanceList(Model theModel) {
 
         List<Student> theStudents = studentService.findAll();
-
         theModel.addAttribute("students", theStudents);
 
         return "attendance/attendance-list";

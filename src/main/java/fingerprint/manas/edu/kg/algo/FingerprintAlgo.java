@@ -22,7 +22,7 @@ public class FingerprintAlgo {
                             .decode(probeImage));
             serialized = probe.toByteArray();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return serialized;
@@ -37,7 +37,7 @@ public class FingerprintAlgo {
                             .dpi(500)
                             .decode(probeImage));
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return probe;
@@ -50,13 +50,13 @@ public class FingerprintAlgo {
         double high = 0;
         for (StudentDetail candidate : candidates) {
             byte[] arr = candidate.getFingerprint();
-            FingerprintTemplate template  = new FingerprintTemplate(arr);
+            FingerprintTemplate template = new FingerprintTemplate(arr);
             double score = matcher.match(template);
             if (score > high) {
                 high = score;
                 id = candidate.getId();
             }
-            }
+        }
         return high >= threshold ? id : null;
     }
 
@@ -65,7 +65,7 @@ public class FingerprintAlgo {
         Integer id = null;
         FingerprintTemplate probe = getTemplateFromImage(image);
 
-        return find(probe,candidates);
+        return find(probe, candidates);
     }
 
 }

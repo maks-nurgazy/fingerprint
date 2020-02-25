@@ -47,6 +47,8 @@
 
         <input class="form-control mb-4 col-4" placeholder="Department" type="file" name="image">
 
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
         <button class="btn btn-info col-2" type="submit">Save</button>
     </form>
 
