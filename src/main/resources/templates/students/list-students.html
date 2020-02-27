@@ -38,24 +38,24 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="tempStudent : ${students}">
+<!--        <tr th:each="tempStudent : ${students}">-->
 
-            <td th:text="${tempStudent.firstName}"/>
-            <td th:text="${tempStudent.lastName}"/>
-            <td th:text="${tempStudent.rollNumber}"/>
+<!--            <td th:text="${tempStudent.firstName}"/>-->
+<!--            <td th:text="${tempStudent.lastName}"/>-->
+<!--            <td th:text="${tempStudent.rollNumber}"/>-->
 
-            <td>
-                <a class="btn btn-info btn-sm"
-                   th:href="@{/students/showFormForUpdate(studentId=${tempStudent.rollNumber})}">
-                    Update
-                </a>
-                <a class="btn btn-danger btn-sm"
-                   onclick="if (!(confirm('Are you sure you want to delete this student?'))) return false"
-                   th:href="@{/students/delete(studentId=${tempStudent.rollNumber})}">
-                    Delete
-                </a>
-            </td>
-        </tr>
+<!--            <td>-->
+<!--                <a class="btn btn-info btn-sm"-->
+<!--                   th:href="@{/students/showFormForUpdate(studentId=${tempStudent.rollNumber})}">-->
+<!--                    Update-->
+<!--                </a>-->
+<!--                <a class="btn btn-danger btn-sm"-->
+<!--                   onclick="if (!(confirm('Are you sure you want to delete this student?'))) return false"-->
+<!--                   th:href="@{/students/delete(studentId=${tempStudent.rollNumber})}">-->
+<!--                    Delete-->
+<!--                </a>-->
+<!--            </td>-->
+<!--        </tr>-->
         </tbody>
     </table>
 

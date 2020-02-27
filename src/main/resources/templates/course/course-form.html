@@ -20,16 +20,16 @@
     <hr>
     <p class="h4 mb-4">Save Student</p>
     <form action="#" method="POST"
-          th:action="@{/saveStudent}" th:object="${student}" enctype="multipart/form-data">
+          th:action="@{/saveCourse}" th:object="${course}" enctype="multipart/form-data">
 
-        <input class="form-control mb-4 col-4" placeholder="Roll number" name="rollNumber"
-               th:field="*{rollNumber}" type="text">
+        <input class="form-control mb-4 col-4" placeholder="Course code"
+               th:field="*{code}" type="text">
 
-        <input class="form-control mb-4 col-4" placeholder="First name" name="firstName"
-               th:field="*{firstName}" type="text">
+        <input class="form-control mb-4 col-4" placeholder="Course name"
+               th:field="*{name}" type="text">
 
-        <input class="form-control mb-4 col-4" placeholder="Last name" name="lastName"
-               th:field="*{lastName}" type="text">
+        <input class="form-control mb-4 col-4" placeholder="Course Teacher"
+               th:field="*{teacher}" type="text">
 
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
