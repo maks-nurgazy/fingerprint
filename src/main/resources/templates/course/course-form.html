@@ -28,8 +28,13 @@
         <input class="form-control mb-4 col-4" placeholder="Course name"
                th:field="*{name}" type="text">
 
-        <input class="form-control mb-4 col-4" placeholder="Course Teacher"
-               th:field="*{teacher}" type="text">
+        <select th:field="*{teacher}">
+            <option th:each="fullName : ${teachers}"
+                    th:value="${fullName}"
+                    th:utext="${fullName}">
+            </option>
+        </select>
+
 
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 

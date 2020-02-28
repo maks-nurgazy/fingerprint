@@ -3,6 +3,7 @@ package attendance.manas.edu.kg.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -14,10 +15,17 @@ public class Student {
     private String firstName;
     private String lastName;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST})
     @JoinTable(name = "student_course",
             joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "course_code"))
+            inverseJoinColumns = @JoinColumn(name = "course_id"))
     private List<Course> courses;
+
+    public void addCourse(Course course){
+        if (courses==null){
+            courses = new ArrayList<>();
+        }
+        courses.add(course);
+    }
 
 }

@@ -10,10 +10,18 @@ import javax.persistence.*;
 public class Record {
 
     @Id
-    int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-    String rollNumber;
+    @ManyToOne
+    @JoinColumn(name = "roll_number")
+    private Student student;
 
     @Enumerated(value = EnumType.STRING)
-    Status status;
+    private Status status;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "attendance_id")
+    private Attendance attendance;
+
 }
