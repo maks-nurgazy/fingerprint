@@ -21,12 +21,11 @@ public class StudentController {
 
         Student student = new Student();
         model.addAttribute("student",student);
-
         return "students/students-form";
     }
 
     @PostMapping("/saveStudent")
-    public String saveStudent(@ModelAttribute("student")Student student){
+    public String saveStudent(@ModelAttribute("student")Student student,Model model){
         studentService.save(student);
         return "redirect:/";
     }

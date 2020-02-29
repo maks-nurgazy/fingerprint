@@ -25,8 +25,6 @@ public class AttendanceController {
         return "attendance/attendance-list";
     }
 
-
-
     @Autowired
     public void setCourseService(CourseService courseService) {
         this.courseService = courseService;

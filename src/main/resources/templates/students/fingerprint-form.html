@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" rel="stylesheet">
+
+    <title>Save Student</title>
+</head>
+
+<body>
+
+<div class="container">
+    <h3>Student Directory</h3>
+    <hr>
+    <p class="h4 mb-4">Save Student</p>
+    <form action="#" method="POST"
+          th:action="@{/saveStudent}" th:object="${student}" enctype="multipart/form-data">
+
+        <input class="form-control mb-4 col-4" placeholder="Roll number" name="rollNumber"
+               th:field="*{rollNumber}" type="text">
+
+        <input class="form-control mb-4 col-4" placeholder="First name" name="firstName"
+               th:field="*{firstName}" type="text">
+
+        <input class="form-control mb-4 col-4" placeholder="Last name" name="lastName"
+               th:field="*{lastName}" type="text">
+
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
+        <button class="btn btn-info col-2" type="submit">Save</button>
+    </form>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

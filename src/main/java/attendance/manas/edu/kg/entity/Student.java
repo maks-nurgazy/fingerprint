@@ -21,6 +21,10 @@ public class Student {
             inverseJoinColumns = @JoinColumn(name = "course_id"))
     private List<Course> courses;
 
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "student")
+    private List<Fingerprint>fingerprints;
+
     public void addCourse(Course course){
         if (courses==null){
             courses = new ArrayList<>();
