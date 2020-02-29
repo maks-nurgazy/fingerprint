@@ -19,4 +19,6 @@ public class FingerprintController {
         return "students/fingerprint-form";
     }
 
+
+
 }
