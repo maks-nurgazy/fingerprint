@@ -19,6 +19,11 @@ public class CourseServiceImpl implements CourseService {
         courseRepository.save(course);
     }
 
+    @Override
+    public Course findByName(String name) {
+        return courseRepository.findByName(name);
+    }
+
 
     @Autowired
     public void setCourseRepository(CourseRepository courseRepository) {
