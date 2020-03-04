@@ -1,0 +1,20 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="include/head::head(pageTitle='SomeTitle')">
+    <title>Page title</title>
+</head>
+
+<body>
+<div id="preloader"></div>
+<div class="wrapper bg-ash" id="wrapper">
+    <div th:replace="include/header-menu::header-menu"></div>
+    <div class="dashboard-page-one">
+        <div th:replace="include/sidebar::sidebar"></div>
+    </div>
+</div>
+
+
+
+<th:block th:replace="include/scripts :: scripts"/>
+</body>
+</html>

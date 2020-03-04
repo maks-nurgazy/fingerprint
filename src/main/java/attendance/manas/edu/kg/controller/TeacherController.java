@@ -35,5 +35,14 @@ public class TeacherController {
         this.teacherService = teacherService;
     }
 
+    @GetMapping("allTeacher")
+    public String showAllTeacher(){
+        return "admin/all-teacher";
+    }
+
+    @GetMapping("menu")
+    public String showMenu(){
+        return "include/menu";
+    }
 
 }
