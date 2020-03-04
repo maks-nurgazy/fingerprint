@@ -23,8 +23,8 @@ public class CourseDtoMapperImpl implements CourseDtoMapper{
         course.setCode(courseDto.getCode());
         course.setName(courseDto.getName());
         Teacher teacher = getTeacher(courseDto.getTeacher());
+        System.out.println(courseDto.getTeacher());
         course.setTeacher(teacher);
-
         return course;
     }
 
