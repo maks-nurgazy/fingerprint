@@ -33,5 +33,4 @@ public class CourseDtoMapperImpl implements CourseDtoMapper{
         String[] fullData = fullName.split(" ");
         return  teacherRepository.findByFirstNameAndLastName(fullData[0],fullData[1]);
     }
-
 }
