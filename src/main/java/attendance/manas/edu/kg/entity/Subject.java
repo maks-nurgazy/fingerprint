@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
-public class Course {
+public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +35,7 @@ public class Course {
         }
         students.add(student);
     }
+
 
 }
 

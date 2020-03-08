@@ -20,7 +20,7 @@
     <hr>
     <p class="h4 mb-4">Save Student</p>
     <form action="#" method="POST"
-          th:action="@{/saveCourse}" th:object="${course}" enctype="multipart/form-data">
+          th:action="@{/saveCourse}" th:object="${subject}" enctype="multipart/form-data">
 
         <input class="form-control mb-4 col-4" placeholder="Course code"
                th:field="*{code}" type="text">

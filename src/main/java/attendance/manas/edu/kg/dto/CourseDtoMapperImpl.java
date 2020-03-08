@@ -1,6 +1,6 @@
 package attendance.manas.edu.kg.dto;
 
-import attendance.manas.edu.kg.entity.Course;
+import attendance.manas.edu.kg.entity.Subject;
 import attendance.manas.edu.kg.entity.Teacher;
 import attendance.manas.edu.kg.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,14 +18,14 @@ public class CourseDtoMapperImpl implements CourseDtoMapper{
 
 
     @Override
-    public Course convertToEntity(CourseDto courseDto) {
-        Course course = new Course();
-        course.setCode(courseDto.getCode());
-        course.setName(courseDto.getName());
+    public Subject convertToEntity(CourseDto courseDto) {
+        Subject subject = new Subject();
+        subject.setCode(courseDto.getCode());
+        subject.setName(courseDto.getName());
         Teacher teacher = getTeacher(courseDto.getTeacher());
         System.out.println(courseDto.getTeacher());
-        course.setTeacher(teacher);
-        return course;
+        subject.setTeacher(teacher);
+        return subject;
     }
 
 

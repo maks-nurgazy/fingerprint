@@ -14,16 +14,16 @@ public class TeacherController {
 
     TeacherService teacherService;
 
-    @GetMapping("/showTeacherForm")
+    @GetMapping("/teacher-form")
     public String addTeacherForm(Model model){
 
         Teacher teacher = new Teacher();
         model.addAttribute("teacher",teacher);
 
-        return "teachers/teachers-form";
+        return "admin/add-teacher";
     }
 
-    @PostMapping("/saveTeacher")
+    @PostMapping("/save-teacher")
     public String saveTeacher(@ModelAttribute("teacher")Teacher teacher){
         teacherService.save(teacher);
         return "redirect:/";

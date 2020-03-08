@@ -1,8 +1,8 @@
 package attendance.manas.edu.kg.controller;
 
-import attendance.manas.edu.kg.entity.Course;
+import attendance.manas.edu.kg.entity.Subject;
 import attendance.manas.edu.kg.entity.Student;
-import attendance.manas.edu.kg.service.CourseService;
+import attendance.manas.edu.kg.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,18 +15,18 @@ import java.util.List;
 @RequestMapping("/attendance")
 public class AttendanceController {
 
-    CourseService courseService;
+    SubjectService subjectService;
 
     @GetMapping("/list")
     public String showStudents(Model model){
-        Course course =  courseService.findByName("Chemistry");
-        List<Student> students = course.getStudents();
+        Subject subject =  subjectService.findByName("Chemistry");
+        List<Student> students = subject.getStudents();
         model.addAttribute("students",students);
         return "attendance/attendance-list";
     }
 
     @Autowired
-    public void setCourseService(CourseService courseService) {
-        this.courseService = courseService;
+    public void setSubjectService(SubjectService subjectService) {
+        this.subjectService = subjectService;
     }
 }

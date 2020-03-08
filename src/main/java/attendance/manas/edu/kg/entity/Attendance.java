@@ -18,7 +18,7 @@ public class Attendance {
 
     @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST})
     @JoinColumn(name = "course_id")
-    private Course course;
+    private Subject subject;
 
     @OneToMany(mappedBy = "attendance",cascade = CascadeType.ALL)
     private List<Record> records;

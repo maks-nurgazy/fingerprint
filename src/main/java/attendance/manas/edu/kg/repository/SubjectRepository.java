@@ -1,10 +1,10 @@
 package attendance.manas.edu.kg.repository;
 
-import attendance.manas.edu.kg.entity.Course;
+import attendance.manas.edu.kg.entity.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CourseRepository extends JpaRepository<Course,Integer> {
-    Course findByName(String name);
+public interface SubjectRepository extends JpaRepository<Subject,Integer> {
+    Subject findByName(String name);
 }

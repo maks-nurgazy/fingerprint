@@ -20,13 +20,13 @@ public class Teacher {
 
     @OneToMany(mappedBy = "teacher",fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST})
-    private List<Course>courses;
+    private List<Subject> cours;
 
-    public void addCourse(Course course){
-        if (courses==null){
-            courses = new ArrayList<>();
+    public void addCourse(Subject subject){
+        if (cours ==null){
+            cours = new ArrayList<>();
         }
-        courses.add(course);
+        cours.add(subject);
     }
 
 }

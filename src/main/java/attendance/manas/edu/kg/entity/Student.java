@@ -19,17 +19,17 @@ public class Student {
     @JoinTable(name = "student_course",
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id"))
-    private List<Course> courses;
+    private List<Subject> cours;
 
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "student")
     private List<Fingerprint>fingerprints;
 
-    public void addCourse(Course course){
-        if (courses==null){
-            courses = new ArrayList<>();
+    public void addCourse(Subject subject){
+        if (cours ==null){
+            cours = new ArrayList<>();
         }
-        courses.add(course);
+        cours.add(subject);
     }
 
 }

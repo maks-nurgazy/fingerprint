@@ -1,7 +1,7 @@
 package attendance.manas.edu.kg.dto;
 
-import attendance.manas.edu.kg.entity.Course;
+import attendance.manas.edu.kg.entity.Subject;
 
 public interface CourseDtoMapper {
-    Course convertToEntity(CourseDto courseDTO);
+    Subject convertToEntity(CourseDto courseDTO);
 }
