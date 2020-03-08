@@ -1,26 +1,18 @@
 package attendance.manas.edu.kg.service;
 
-import attendance.manas.edu.kg.dto.CourseDto;
-import attendance.manas.edu.kg.dto.CourseDtoMapper;
+import attendance.manas.edu.kg.dto.TeacherDto;
+import attendance.manas.edu.kg.dto.TeacherDtoMapper;
 import attendance.manas.edu.kg.entity.Subject;
 import attendance.manas.edu.kg.repository.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.List;
 
 @Service
 public class SubjectServiceImpl implements SubjectService {
     SubjectRepository subjectRepository;
-    CourseDtoMapper courseDtoMapper;
 
-
-    @Override
-    public void save(CourseDto courseDto) {
-        Subject subject = courseDtoMapper.convertToEntity(courseDto);
-        subjectRepository.save(subject);
-    }
 
     @Override
     public void save(Subject subject) {
@@ -39,18 +31,13 @@ public class SubjectServiceImpl implements SubjectService {
 
     @Override
     public List<Subject> getSubjectWithoutTeacher() {
-        return (List<Subject>) subjectRepository.findByTeacherIsNull();
+        return subjectRepository.findByTeacherIsNull();
     }
 
 
     @Autowired
     public void setSubjectRepository(SubjectRepository subjectRepository) {
         this.subjectRepository = subjectRepository;
-    }
-
-    @Autowired
-    public void setCourseDtoMapper(CourseDtoMapper courseDtoMapper) {
-        this.courseDtoMapper = courseDtoMapper;
     }
 
 }

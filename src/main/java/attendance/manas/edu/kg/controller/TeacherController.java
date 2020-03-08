@@ -1,7 +1,7 @@
 package attendance.manas.edu.kg.controller;
 
+import attendance.manas.edu.kg.dto.TeacherDto;
 import attendance.manas.edu.kg.entity.Subject;
-import attendance.manas.edu.kg.entity.Teacher;
 import attendance.manas.edu.kg.service.SubjectService;
 import attendance.manas.edu.kg.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -20,20 +21,22 @@ public class TeacherController {
     SubjectService subjectService;
 
     @GetMapping("/teacher-form")
-    public String addTeacherForm(Model model){
+    public String addTeacherForm(Model model) {
 
-        Teacher teacher = new Teacher();
-        List<Subject>subjects = subjectService.getSubjectWithoutTeacher();
-        model.addAttribute("teacher",teacher);
-        model.addAttribute("subjects",subjects);
+        TeacherDto teacher = new TeacherDto();
+        List<Subject> subjects = subjectService.getSubjectWithoutTeacher();
+        model.addAttribute("teacher", teacher);
+        model.addAttribute("subjects", subjects);
 
         return "admin/add-teacher";
     }
 
+    @ResponseBody
     @PostMapping("/save-teacher")
-    public String saveTeacher(@ModelAttribute("teacher")Teacher teacher){
-        teacherService.save(teacher);
-        return "redirect:/";
+    public TeacherDto saveTeacher(@ModelAttribute("teacher") TeacherDto teacherDto) {
+        teacherService.save(teacherDto);
+        return teacherDto;
+        // return "redirect:/";
     }
 
 
@@ -42,14 +45,15 @@ public class TeacherController {
         this.teacherService = teacherService;
     }
 
+    @Autowired
+    public void setSubjectService(SubjectService subjectService) {
+        this.subjectService = subjectService;
+    }
+
     @GetMapping("allTeacher")
-    public String showAllTeacher(){
+    public String showAllTeacher() {
         return "admin/all-teacher";
     }
 
-    @GetMapping("menu")
-    public String showMenu(){
-        return "include/menu";
-    }
 
 }

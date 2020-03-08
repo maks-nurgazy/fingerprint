@@ -22,9 +22,9 @@ public class SubjectController {
     public String addCourseForm(Model model) {
 
         Subject subject = new Subject();
-        List<Subject>subjects = subjectService.getAllCourses();
+        List<Subject> subjects = subjectService.getAllCourses();
         model.addAttribute("subject", subject);
-        model.addAttribute("subjects",subjects);
+        model.addAttribute("subjects", subjects);
 
         return "admin/all-subject";
     }

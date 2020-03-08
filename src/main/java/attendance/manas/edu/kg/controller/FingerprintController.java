@@ -11,14 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class FingerprintController {
 
     @GetMapping("/showFingerprintForm")
-    public String addFingerprintForm(Model model){
+    public String addFingerprintForm(Model model) {
 
         Student student = new Student();
-        model.addAttribute("student",student);
+        model.addAttribute("student", student);
 
         return "students/fingerprint-form";
     }
-
-
 
 }

@@ -22,12 +22,12 @@ public class Teacher {
             cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST})
     private List<Subject> subjects;
 
-    public void addSubject(Subject subject){
-        if (subjects ==null){
+    public void add(Subject subject){
+        if(subjects == null){
             subjects = new ArrayList<>();
         }
         subjects.add(subject);
+        subject.setTeacher(this);
     }
 
 }
-    

@@ -4,10 +4,15 @@ import attendance.manas.edu.kg.entity.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
+import java.util.List;
 
 @Repository
-public interface SubjectRepository extends JpaRepository<Subject,Integer> {
+public interface SubjectRepository extends JpaRepository<Subject, Integer> {
     Subject findByName(String name);
-    Collection<Subject> findByTeacherIsNull();
+
+    List<Subject> findByTeacherIsNull();
+
+    List<Subject> findAllByIdIn(List<Integer> ids);
+
 }
+
