@@ -7,6 +7,7 @@ import attendance.manas.edu.kg.repository.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -34,6 +35,11 @@ public class SubjectServiceImpl implements SubjectService {
     @Override
     public List<Subject> getAllCourses() {
         return subjectRepository.findAll();
+    }
+
+    @Override
+    public List<Subject> getSubjectWithoutTeacher() {
+        return (List<Subject>) subjectRepository.findByTeacherIsNull();
     }
 
 
