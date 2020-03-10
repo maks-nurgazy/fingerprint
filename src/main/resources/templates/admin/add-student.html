@@ -13,38 +13,52 @@
         <div class="dashboard-content-one">
             <!-- Breadcubs Area Start Here -->
             <div class="breadcrumbs-area">
-                <h3>Teacher</h3>
+                <h3>Students</h3>
                 <ul>
                     <li>
                         <a href="index.html">Home</a>
                     </li>
-                    <li>Add New Teacher</li>
+                    <li>Student Form</li>
                 </ul>
             </div>
             <!-- Breadcubs Area End Here -->
-            <!-- Add New Teacher Area Start Here -->
+            <!-- Admit Form Area Start Here -->
             <div class="card height-auto">
                 <div class="card-body">
-                    <form class="new-added-form" th:action="@{/save-teacher}" th:object="${teacher}" method="post">
+                    <div class="heading-layout1">
+                        <div class="item-title">
+                            <h3>Add New Students</h3>
+                        </div>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" href="add-student.html#" role="button" data-toggle="dropdown"
+                               aria-expanded="false">...</a>
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="add-student.html#"><i
+                                        class="fas fa-times text-orange-red"></i>Close</a>
+                                <a class="dropdown-item" href="add-student.html#"><i
+                                        class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                <a class="dropdown-item" href="add-student.html#"><i
+                                        class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="new-added-form" th:object="${student}" th:action="@{/save-student}" method="post">
                         <div class="row">
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>First Name *</label>
-                                <input type="text" placeholder="" class="form-control" th:field="*{firstName}">
+                                <input type="text" placeholder="" th:field="*{firstName}" class="form-control">
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Last Name *</label>
-                                <input type="text" placeholder="" class="form-control" th:field="*{lastName}">
+                                <input type="text" placeholder="" th:field="*{lastName}" class="form-control">
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                <label>Subjects *</label>
-                                <select class="select2" multiple="multiple" th:field="*{subjects}">
-                                    <option th:each="subject:${subjects}"
-                                            th:value="${subject.id}"
-                                            th:text="${subject.name}">Subject</option>
-                                </select>
+                                <label>Roll</label>
+                                <input type="text" placeholder="" th:field="*{rollNumber}" class="form-control">
                             </div>
                             <div class="col-lg-6 col-12 form-group mg-t-30">
-                                <label class="text-dark-medium">Upload Teacher Photo (150px X 150px)</label>
+                                <label class="text-dark-medium">Upload Student Photo (150px X 150px)</label>
                                 <input type="file" class="form-control-file">
                             </div>
                             <div class="col-12 form-group mg-t-8">
@@ -55,9 +69,10 @@
                     </form>
                 </div>
             </div>
-            <!-- Add New Teacher Area End Here -->
+            <!-- Admit Form Area End Here -->
             <footer class="footer-wrap-layout1">
-                <div class="copyright">© Copyrights <a href="add-teacher.html#">akkhor</a> 2019. All rights reserved. Designed by <a href="add-teacher.html#">PsdBosS</a></div>
+                <div class="copyright">© Copyrights <a href="add-student.html#">akkhor</a> 2019. All rights reserved. Designed by <a
+                        href="add-student.html#">PsdBosS</a></div>
             </footer>
         </div>
     </div>
