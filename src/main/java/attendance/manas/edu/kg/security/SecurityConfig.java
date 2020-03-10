@@ -61,20 +61,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService((userDetailsService)).passwordEncoder(passwordEncoder);
     }
-
-    //    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.jdbcAuthentication().dataSource(dataSource);
-//    }
-
-
-    //    public SecurityConfig(@Qualifier("bcryptDataSource") DataSource dataSource) {
-//        this.dataSource = dataSource;
-//    }
-
-
-
-
-
-
 }

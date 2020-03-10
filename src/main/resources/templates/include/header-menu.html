@@ -8,7 +8,7 @@
 <div class="navbar navbar-expand-md header-menu-one bg-light" th:fragment="header-menu">
     <div class="nav-bar-header-one">
         <div class="header-logo">
-            <a href="index.html">
+            <a th:href="@{/}">
                 <img src="img/logo.png" alt="logo">
             </a>
         </div>
@@ -46,7 +46,7 @@
         </ul>
         <ul class="navbar-nav">
             <li class="navbar-item dropdown header-admin">
-                <a class="navbar-nav-link dropdown-toggle" href="all-teacher.html#" role="button"
+                <a class="navbar-nav-link dropdown-toggle" href="#" role="button"
                    data-toggle="dropdown"
                    aria-expanded="false">
                     <div class="admin-title">
@@ -54,7 +54,7 @@
                         <span>Admin</span>
                     </div>
                     <div class="admin-img">
-                        <img src="../../static/img/figure/admin.jpg" alt="Admin">
+                        <img src="img/figure/admin.jpg" alt="Admin">
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
@@ -63,20 +63,14 @@
                     </div>
                     <div class="item-content">
                         <ul class="settings-list">
-                            <li><a href="all-teacher.html#"><i class="flaticon-user"></i>My Profile</a></li>
-                            <li><a href="all-teacher.html#"><i class="flaticon-list"></i>Task</a></li>
-                            <li><a href="all-teacher.html#"><i
-                                    class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a>
-                            </li>
-                            <li><a href="all-teacher.html#"><i class="flaticon-gear-loading"></i>Account
-                                Settings</a></li>
-                            <li><a href="login.html"><i class="flaticon-turn-off"></i>Log Out</a></li>
+                            <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
+                            <li><a th:href="@{/logout}"><i class="flaticon-turn-off"></i>Log Out</a></li>
                         </ul>
                     </div>
                 </div>
             </li>
             <li class="navbar-item dropdown header-message">
-                <a class="navbar-nav-link dropdown-toggle" href="all-teacher.html#" role="button"
+                <a class="navbar-nav-link dropdown-toggle" href="#" role="button"
                    data-toggle="dropdown"
                    aria-expanded="false">
                     <i class="far fa-envelope"></i>
@@ -95,7 +89,7 @@
                             </div>
                             <div class="media-body space-sm">
                                 <div class="item-title">
-                                    <a href="all-teacher.html#">
+                                    <a href="#">
                                         <span class="item-name">Maria Zaman</span>
                                         <span class="item-time">18:30</span>
                                     </a>
@@ -110,7 +104,7 @@
                             </div>
                             <div class="media-body space-sm">
                                 <div class="item-title">
-                                    <a href="all-teacher.html#">
+                                    <a href="#">
                                         <span class="item-name">Benny Roy</span>
                                         <span class="item-time">10:35</span>
                                     </a>
@@ -125,7 +119,7 @@
                             </div>
                             <div class="media-body space-sm">
                                 <div class="item-title">
-                                    <a href="all-teacher.html#">
+                                    <a href="#">
                                         <span class="item-name">Steven</span>
                                         <span class="item-time">02:35</span>
                                     </a>
@@ -136,11 +130,11 @@
                         </div>
                         <div class="media">
                             <div class="item-img bg-violet-blue">
-                                <img src="../../static/img/figure/student11.png" alt="img">
+                                <img src="img/figure/student11.png" alt="img">
                             </div>
                             <div class="media-body space-sm">
                                 <div class="item-title">
-                                    <a href="all-teacher.html#">
+                                    <a href="#">
                                         <span class="item-name">Joshep Joe</span>
                                         <span class="item-time">12:35</span>
                                     </a>
@@ -153,7 +147,7 @@
                 </div>
             </li>
             <li class="navbar-item dropdown header-notification">
-                <a class="navbar-nav-link dropdown-toggle" href="all-teacher.html#" role="button"
+                <a class="navbar-nav-link dropdown-toggle" href="#" role="button"
                    data-toggle="dropdown"
                    aria-expanded="false">
                     <i class="far fa-bell"></i>
@@ -197,12 +191,12 @@
                 </div>
             </li>
             <li class="navbar-item dropdown header-language">
-                <a class="navbar-nav-link dropdown-toggle" href="all-teacher.html#" role="button"
+                <a class="navbar-nav-link dropdown-toggle" href="#" role="button"
                    data-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="all-teacher.html#">English</a>
-                    <a class="dropdown-item" href="all-teacher.html#">Turkce</a>
-                    <a class="dropdown-item" href="all-teacher.html#">Русский</a>
+                    <a class="dropdown-item" href="#">English</a>
+                    <a class="dropdown-item" href="#">Turkce</a>
+                    <a class="dropdown-item" href="#">Русский</a>
                 </div>
             </li>
         </ul>
