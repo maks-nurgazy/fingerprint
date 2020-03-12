@@ -2062,7 +2062,12 @@ ul {
 .header-main-menu .navbar-nav .header-admin .dropdown-menu .item-content .settings-list {
   padding: 10px 0;
 }
-.header-main-menu .navbar-nav .header-admin .dropdown-menu .item-content .settings-list li a {
+.header-main-menu .navbar-nav .header-admin .dropdown-menu .item-content .settings-list li a,
+.header-main-menu .navbar-nav .header-admin .dropdown-menu .item-content .settings-list li button {
+  text-align:left;
+  background: transparent;
+  border: none;
+  outline: none;
   color: #646464;
   font-size: 15px;
   display: block;
@@ -2072,7 +2077,10 @@ ul {
   -ms-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  cursor: pointer;
+  width: 100%;
 }
+.header-main-menu .navbar-nav .header-admin .dropdown-menu .item-content .settings-list li button i:before,
 .header-main-menu .navbar-nav .header-admin .dropdown-menu .item-content .settings-list li a i:before {
   margin-left: 0;
   margin-right: 10px;
@@ -2080,7 +2088,8 @@ ul {
   font-weight: 600;
   color: #444444;
 }
-.header-main-menu .navbar-nav .header-admin .dropdown-menu .item-content .settings-list li a:hover {
+.header-main-menu .navbar-nav .header-admin .dropdown-menu .item-content .settings-list li a:hover,
+.header-main-menu .navbar-nav .header-admin .dropdown-menu .item-content .settings-list li button:hover {
   background-color: #f6f6f6;
 }
 /*=============== 5.5 Sidebar Menu ==================*/
