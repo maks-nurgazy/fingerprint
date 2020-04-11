@@ -32,4 +32,12 @@ public class Student {
         cours.add(subject);
     }
 
+    public void addFingerprint(Fingerprint fingerprint){
+        if(fingerprints==null){
+            fingerprints = new ArrayList<>();
+        }
+        fingerprint.setStudent(this);
+        fingerprints.add(fingerprint);
+    }
+
 }

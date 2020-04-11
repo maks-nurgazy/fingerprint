@@ -9,5 +9,4 @@ public class FingerprintApplication {
     public static void main(String[] args) {
         SpringApplication.run(FingerprintApplication.class, args);
     }
-
 }

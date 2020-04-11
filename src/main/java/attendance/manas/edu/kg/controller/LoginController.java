@@ -11,14 +11,14 @@ public class LoginController {
         return "admin/index";
     }
 
-    @GetMapping("/showMyLoginPage")
+    @GetMapping("/login")
     public String showMyLoginPage() {
         return "admin/login";
     }
 
     @GetMapping("/access-denied")
     public String showAccessDenied() {
-        return "login-logout/access-denied";
+        return "login_logout/access-denied";
     }
 
 }

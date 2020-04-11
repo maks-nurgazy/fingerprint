@@ -9,16 +9,20 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>fingerprint.manas.edu.kg</groupId>
-    <artifactId>Fingerprint</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>Fingerprint</name>
-    <description>Student attendance project</description>
+    <artifactId>AttendanceManagementSystem</artifactId>
+    <version>v.1.0</version>
+    <name>AttendanceManagementSystem</name>
+    <description>Student attendance using fingerprint module</description>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
