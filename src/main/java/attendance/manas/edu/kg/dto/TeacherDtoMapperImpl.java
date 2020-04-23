@@ -19,8 +19,8 @@ public class TeacherDtoMapperImpl implements TeacherDtoMapper {
         teacher.setFirstName(teacherDto.getFirstName());
         teacher.setLastName(teacherDto.getLastName());
         List<Subject> subjects = subjectRepository.findAllByIdIn(teacherDto.getSubjects());
-        for (Subject subject:subjects){
-            teacher.add(subject);
+        for (Subject subject : subjects) {
+            teacher.addSubject(subject);
         }
         return subjects;
     }

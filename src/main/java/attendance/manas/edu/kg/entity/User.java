@@ -30,7 +30,6 @@ public class User {
     @Enumerated(value = EnumType.STRING)
     private Role role;
 
-
     public static User from(UserForm form) {
         return User.builder()
                 .firstName(form.getFirstName())

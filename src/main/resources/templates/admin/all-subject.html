@@ -32,15 +32,16 @@
                                     <h3>Add New Subject</h3>
                                 </div>
                             </div>
-                            <form class="new-added-form" th:action="@{/save-subject}" th:object="${subject}" method="post">
+                            <form class="new-added-form" th:action="@{/save-subject}" th:object="${subject}"
+                                  method="post">
                                 <div class="row">
                                     <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                         <label>Subject Code *</label>
-                                        <input class="form-control" placeholder="" type="text" th:field="*{code}" />
+                                        <input class="form-control" placeholder="" type="text" th:field="*{code}"/>
                                     </div>
                                     <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                         <label>Subject Name *</label>
-                                        <input class="form-control" placeholder="" type="text" th:field="*{name}" />
+                                        <input class="form-control" placeholder="" type="text" th:field="*{name}"/>
                                     </div>
                                     <div class="col-12 form-group mg-t-8">
                                         <button class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"

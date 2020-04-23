@@ -40,7 +40,8 @@
                                 <select class="select2" multiple="multiple" th:field="*{subjects}">
                                     <option th:each="subject:${subjects}"
                                             th:value="${subject.id}"
-                                            th:text="${subject.name}">Subject</option>
+                                            th:text="${subject.name}">Subject
+                                    </option>
                                 </select>
                             </div>
                             <div class="col-lg-6 col-12 form-group mg-t-30">
@@ -48,7 +49,8 @@
                                 <input type="file" class="form-control-file">
                             </div>
                             <div class="col-12 form-group mg-t-8">
-                                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save
+                                </button>
                                 <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
                             </div>
                         </div>
@@ -57,7 +59,8 @@
             </div>
             <!-- Add New Teacher Area End Here -->
             <footer class="footer-wrap-layout1">
-                <div class="copyright">© Copyrights <a href="add-teacher.html#">akkhor</a> 2019. All rights reserved. Designed by <a href="add-teacher.html#">PsdBosS</a></div>
+                <div class="copyright">© Copyrights <a href="add-teacher.html#">akkhor</a> 2019. All rights reserved.
+                    Designed by <a href="add-teacher.html#">PsdBosS</a></div>
             </footer>
         </div>
     </div>

@@ -23,11 +23,9 @@ public class FingerprintController {
     private SimpMessageSendingOperations messagingTemplate;
 
 
-
-
     @GetMapping("/add-fingerprint/{id}")
-    public String addFingerprint(@PathVariable("id") String id,HttpServletRequest request) {
-        request.getSession().setAttribute("id",id);
+    public String addFingerprint(@PathVariable("id") String id, HttpServletRequest request) {
+        request.getSession().setAttribute("id", id);
         /*
          * Бул жерде АРДУИНОГО(ОТПЕЧАТОК ПАЛЬЦЕВ окууган устройствого) запрос барат.
          * Запрос озуно жогорудагы {id} ни камтыйт.

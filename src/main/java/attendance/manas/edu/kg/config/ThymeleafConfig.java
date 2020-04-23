@@ -21,7 +21,7 @@ public class ThymeleafConfig {
 
     // poisk shablonov i ih rendering - mapped, svyazyvaet
     //@Bean
-    public ViewResolver viewResolver(){
+    public ViewResolver viewResolver() {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine());
         resolver.setCharacterEncoding("UTF-8");
@@ -29,7 +29,7 @@ public class ThymeleafConfig {
     }
 
 
-    private SpringResourceTemplateResolver templateResolver(){
+    private SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(this.applicationContext);
         templateResolver.setPrefix("/templates/");
@@ -41,7 +41,7 @@ public class ThymeleafConfig {
     }
 
     //@Bean
-    public SpringTemplateEngine templateEngine(){
+    public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
         return templateEngine;

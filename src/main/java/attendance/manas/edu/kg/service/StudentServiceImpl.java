@@ -19,15 +19,15 @@ public class StudentServiceImpl implements StudentService {
     }
 
 
-    public List<Student>getStudents(){
+    public List<Student> getStudents() {
         return studentRepository.findAll();
     }
 
     @Override
-    public Student getStudent(String id){
+    public Student getStudent(String id) {
         Optional<Student> optionalStudent = studentRepository.findById(id);
         Student student = null;
-        if(optionalStudent.isPresent()){
+        if (optionalStudent.isPresent()) {
             student = optionalStudent.get();
         }
         return student;

@@ -30,7 +30,8 @@
                             <h3>All Students</h3>
                         </div>
                         <div class="dropdown">
-                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="all-student.html#"
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown"
+                               href="all-student.html#"
                                role="button">...</a>
 
                             <div class="dropdown-menu dropdown-menu-right">
@@ -75,9 +76,10 @@
                                 <td th:text="${student.firstName}">John</td>
                                 <td th:text="${student.lastName}">Smith</td>
                                 <td>
-                                    <a class="dropdown-item" th:href="@{/add-fingerprint/{id}(id = ${student.rollNumber})}">
+                                    <a class="dropdown-item"
+                                       th:href="@{/add-fingerprint/{id}(id = ${student.rollNumber})}">
                                         <!--                                            <i class="fas fa-times text-orange-red"></i>Add Fingerprint-->
-                                        <button class="btn btn-outline-dark" type="button" >
+                                        <button class="btn btn-outline-dark" type="button">
                                             <i class="fas fa-plus" id="faplus"></i> Add Fingerprint
                                         </button>
                                     </a>

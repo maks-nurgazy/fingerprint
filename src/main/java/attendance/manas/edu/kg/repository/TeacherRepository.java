@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TeacherRepository extends JpaRepository<Teacher,Integer> {
-    Teacher findByFirstNameAndLastName(String firstName,String lastName);
+public interface TeacherRepository extends JpaRepository<Teacher, Integer> {
+    Teacher findByFirstNameAndLastName(String firstName, String lastName);
+
     List<Teacher> findByOrderByFirstNameDesc();
 }

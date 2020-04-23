@@ -7,11 +7,11 @@ public class Time {
 
     private Date date;
 
-    Time(){
+    Time() {
         date = new Date();
     }
 
-    public String getTime(){
+    public String getTime() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         return formatter.format(date);
     }

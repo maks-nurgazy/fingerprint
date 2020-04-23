@@ -55,5 +55,4 @@ public class TeacherController {
         return "admin/all-teacher";
     }
 
-
 }
