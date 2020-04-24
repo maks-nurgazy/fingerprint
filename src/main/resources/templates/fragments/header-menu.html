@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+>
 <head>
     <title>Header-menu</title>
 </head>
@@ -50,8 +51,8 @@
                    data-toggle="dropdown"
                    aria-expanded="false">
                     <div class="admin-title">
-                        <h5 class="item-title">Maksatbek Bolushov</h5>
-                        <span>Admin</span>
+                        <h5 class="item-title" th:text="${#authentication.getName()}">Maks</h5>
+                        <span th:text="${#authentication.getAuthorities()}">Admin</span>
                     </div>
                     <div class="admin-img">
                         <img src="img/figure/admin.jpg" alt="Admin">
@@ -59,7 +60,10 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="item-header">
-                        <h6 class="item-title">Maksatbek Bolushov</h6>
+                        <h6 class="item-title"
+                            th:text="${#request.userPrincipal.principal.user.firstName+' '+#request.userPrincipal.principal.user.lastName}">
+                            Maksatbek Bolushov
+                        </h6>
                     </div>
                     <div class="item-content">
                         <ul class="settings-list">

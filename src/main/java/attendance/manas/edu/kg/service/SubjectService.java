@@ -12,4 +12,7 @@ public interface SubjectService {
     List<Subject> getAllCourses();
 
     List<Subject> getSubjectWithoutTeacher();
+
+    List<Subject>getSubjects(String f,String l);
+
 }

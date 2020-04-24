@@ -2,6 +2,7 @@ package attendance.manas.edu.kg.controller;
 
 import attendance.manas.edu.kg.dto.TeacherDto;
 import attendance.manas.edu.kg.entity.Subject;
+import attendance.manas.edu.kg.entity.Teacher;
 import attendance.manas.edu.kg.service.SubjectService;
 import attendance.manas.edu.kg.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,13 @@ public class TeacherController {
 
     TeacherService teacherService;
     SubjectService subjectService;
+
+    @ResponseBody
+    @GetMapping("/showT")
+    public List<Teacher>showT(){
+        return teacherService.findAll();
+    }
+
 
     @GetMapping("/teacher-form")
     public String addTeacherForm(Model model) {

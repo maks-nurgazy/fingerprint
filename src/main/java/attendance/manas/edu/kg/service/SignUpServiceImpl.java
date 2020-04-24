@@ -26,7 +26,7 @@ public class SignUpServiceImpl implements SignUpService {
                 .lastName(userForm.getLastName())
                 .hashPassword(hashPassword)
                 .login(userForm.getLogin())
-                .role(Role.TEACHER)
+                .role(userForm.getRole())
                 .build();
 
         usersRepository.save(user);

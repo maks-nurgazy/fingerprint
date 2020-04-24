@@ -14,5 +14,8 @@ public interface SubjectRepository extends JpaRepository<Subject, Integer> {
 
     List<Subject> findAllByIdIn(List<Integer> ids);
 
+
+    List<Subject> findAllByTeacherFirstNameAndTeacherLastName(String firstName,String lastName);
+
 }
 

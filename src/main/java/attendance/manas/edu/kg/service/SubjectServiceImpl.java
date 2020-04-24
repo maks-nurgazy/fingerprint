@@ -34,6 +34,11 @@ public class SubjectServiceImpl implements SubjectService {
         return subjectRepository.findByTeacherIsNull();
     }
 
+    @Override
+    public List<Subject> getSubjects(String f, String l) {
+        return subjectRepository.findAllByTeacherFirstNameAndTeacherLastName(f,l);
+    }
+
 
     @Autowired
     public void setSubjectRepository(SubjectRepository subjectRepository) {
